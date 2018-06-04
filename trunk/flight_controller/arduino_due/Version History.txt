@@ -1,0 +1,58 @@
+Version Control
+
+
+
+version 0.0.1.0: 
+Date:  11 May 2014
+Description: still under construction ... code compile, but not complete on DUE.
+
+
+version 0.0.1.1: 
+Date:  12 May 2014
+Description: still under construction ... code compile, EPROM is working now.
+
+version 0.0.1.2
+Date: 13 May 2014
+Description" still under construction.... solved a big issue in EEPROM related to paging.
+
+
+version 0.0.1.3
+Date: 15 May 2014
+Description: still under construction... RX signal for the first 5 channels are working now.
+known issue: The Gyro factor GYR_CMPF_FACTOR has to be 2 for proper reading, which suggest another data conversion issue. The first issue in gyro was in the raw data and has been solved by adding strong typing integer16 in casting.
+
+
+version 0.0.1.4
+Date: 16 May 2014
+Description: still under construction... Quad & TRI configuration is working now :)
+known issue: The Gyro factor GYR_CMPF_FACTOR has to be 2 for proper reading, which suggest another data conversion issue. The first issue in gyro was in the raw data and has been solved by adding strong typing integer16 in casting.
+
+
+version 0.0.1.5
+Date: 17 May 2014
+Description: still under construction... Quad & TRI configuration is working now :)
+known issue: The Gyro factor GYR_CMPF_FACTOR has to be 2 for proper reading, which suggest another data conversion issue. The first issue in gyro was in the raw data and has been solved by adding strong typing integer16 in casting.
+enhancement: calling wire_due has been optimized by data types to avoid unnecessary intermediate functions. execution time is no 1.4ms rather than 4+ms
+
+version 0.0.1.6
+Date 19 May 2014
+Description: major communication issue has been discovered and solved... related to 32-bit data alignment.
+known issue: Gyro issue .... getting close to solve it
+
+
+version 0.0.1.7
+Date 20 May 2014
+Description: Gyro issue has been solved AT LAST :) 
+The issue was due to the cycle time that is used to calculate deltaGyro was uint16_t
+it should be int32_t as in the main cycle of the Multiwii.cpp
+uint16_t currentT = micros();
+anyhow I added a #if define to allow this type of change.
+
+
+version 0.0.1.8
+Date 20 May 2014
+Description: You can fly using QuadP,X & TRI
+
+version 0.0.1.9
+Date 29 May 2014
+Description: Fix TWI resulted in compile problem on AVR.
