@@ -47,8 +47,6 @@
             this.nRATE_yaw = new System.Windows.Forms.NumericUpDown();
             this.trackBar_T_MID = new System.Windows.Forms.TrackBar();
             this.nRATE_rp = new System.Windows.Forms.NumericUpDown();
-            this.throttle_expo_control1 = new MultiWiiGUIControls.throttle_expo_control();
-            this.rc_expo_control1 = new MultiWiiGUIControls.rc_expo_control();
             this.trackbar_RC_Rate = new System.Windows.Forms.TrackBar();
             this.label66 = new System.Windows.Forms.Label();
             this.label65 = new System.Windows.Forms.Label();
@@ -59,8 +57,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.tabPageRC = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.rci_Control_settings = new MultiWiiGUIControls.rc_input_control();
-            this.motorsIndicator1 = new MultiWiiGUIControls.MWGUIMotors();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tabPageRealtime = new System.Windows.Forms.TabPage();
@@ -68,12 +64,6 @@
             this.cb_monitor_rate = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.b_pause = new System.Windows.Forms.Button();
-            this.indACC = new MultiWiiGUIControls.indicator_lamp();
-            this.indMAG = new MultiWiiGUIControls.indicator_lamp();
-            this.indBARO = new MultiWiiGUIControls.indicator_lamp();
-            this.indGPS = new MultiWiiGUIControls.indicator_lamp();
-            this.indSONAR = new MultiWiiGUIControls.indicator_lamp();
-            this.indOPTIC = new MultiWiiGUIControls.indicator_lamp();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.b_cal_acc = new System.Windows.Forms.Button();
             this.b_cal_mag = new System.Windows.Forms.Button();
@@ -101,10 +91,7 @@
             this.l_vbatt = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.gpsIndicator = new MultiWiiGUIControls.GpsIndicatorInstrumentControl();
             this.l_powersum = new System.Windows.Forms.Label();
-            this.attitudeIndicatorInstrumentControl1 = new MultiWiiGUIControls.artifical_horizon();
-            this.headingIndicatorInstrumentControl1 = new MultiWiiGUIControls.heading_indicator();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.l_acc_z = new System.Windows.Forms.Label();
             this.l_acc_pitch = new System.Windows.Forms.Label();
@@ -141,6 +128,9 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.MWC_Button = new System.Windows.Forms.ToolStripButton();
             this.b_about = new System.Windows.Forms.ToolStripButton();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabMain.SuspendLayout();
             this.tabPagePID.SuspendLayout();
             this.groupBox12.SuspendLayout();
@@ -158,7 +148,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nRCRate)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.tabPageRC.SuspendLayout();
-            this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.tabPageRealtime.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -171,6 +160,8 @@
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabMain
@@ -178,11 +169,12 @@
             this.tabMain.Controls.Add(this.tabPagePID);
             this.tabMain.Controls.Add(this.tabPageRC);
             this.tabMain.Controls.Add(this.tabPageRealtime);
+            this.tabMain.Controls.Add(this.tabPage1);
             this.tabMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabMain.Location = new System.Drawing.Point(0, 54);
             this.tabMain.Name = "tabMain";
             this.tabMain.SelectedIndex = 0;
-            this.tabMain.Size = new System.Drawing.Size(595, 478);
+            this.tabMain.Size = new System.Drawing.Size(595, 477);
             this.tabMain.TabIndex = 9;
             this.tabMain.SelectedIndexChanged += new System.EventHandler(this.tabMain_SelectedIndexChanged);
             // 
@@ -194,7 +186,7 @@
             this.tabPagePID.Location = new System.Drawing.Point(4, 22);
             this.tabPagePID.Name = "tabPagePID";
             this.tabPagePID.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePID.Size = new System.Drawing.Size(587, 452);
+            this.tabPagePID.Size = new System.Drawing.Size(587, 451);
             this.tabPagePID.TabIndex = 1;
             this.tabPagePID.Text = "Parameters";
             // 
@@ -214,8 +206,6 @@
             this.groupBox12.Controls.Add(this.nRATE_yaw);
             this.groupBox12.Controls.Add(this.trackBar_T_MID);
             this.groupBox12.Controls.Add(this.nRATE_rp);
-            this.groupBox12.Controls.Add(this.throttle_expo_control1);
-            this.groupBox12.Controls.Add(this.rc_expo_control1);
             this.groupBox12.Controls.Add(this.trackbar_RC_Rate);
             this.groupBox12.Controls.Add(this.label66);
             this.groupBox12.Controls.Add(this.label65);
@@ -457,22 +447,6 @@
             this.nRATE_rp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nRATE_rp.ValueChanged += new System.EventHandler(this.nRATE_rp_ValueChanged);
             // 
-            // throttle_expo_control1
-            // 
-            this.throttle_expo_control1.Location = new System.Drawing.Point(82, 171);
-            this.throttle_expo_control1.Name = "throttle_expo_control1";
-            this.throttle_expo_control1.Size = new System.Drawing.Size(150, 100);
-            this.throttle_expo_control1.TabIndex = 25;
-            this.throttle_expo_control1.Text = "throttle_expo_control1";
-            // 
-            // rc_expo_control1
-            // 
-            this.rc_expo_control1.Location = new System.Drawing.Point(80, 19);
-            this.rc_expo_control1.Name = "rc_expo_control1";
-            this.rc_expo_control1.Size = new System.Drawing.Size(150, 100);
-            this.rc_expo_control1.TabIndex = 15;
-            this.rc_expo_control1.Text = "rc_expo_control1";
-            // 
             // trackbar_RC_Rate
             // 
             this.trackbar_RC_Rate.AutoSize = false;
@@ -585,7 +559,7 @@
             this.label5.Size = new System.Drawing.Size(260, 26);
             this.label5.TabIndex = 0;
             this.label5.Text = "Aqua color box indicates setting was changed in GUI,\r\nbut not written to flight c" +
-                "ontroller.";
+    "ontroller.";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // tabPageRC
@@ -602,32 +576,12 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.rci_Control_settings);
-            this.groupBox6.Controls.Add(this.motorsIndicator1);
             this.groupBox6.Location = new System.Drawing.Point(362, 7);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(219, 436);
             this.groupBox6.TabIndex = 78;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Channel I/O";
-            // 
-            // rci_Control_settings
-            // 
-            this.rci_Control_settings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.rci_Control_settings.Location = new System.Drawing.Point(9, 27);
-            this.rci_Control_settings.Name = "rci_Control_settings";
-            this.rci_Control_settings.Size = new System.Drawing.Size(200, 150);
-            this.rci_Control_settings.TabIndex = 15;
-            this.rci_Control_settings.Text = "rc_input_control2";
-            // 
-            // motorsIndicator1
-            // 
-            this.motorsIndicator1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.motorsIndicator1.Location = new System.Drawing.Point(22, 193);
-            this.motorsIndicator1.Name = "motorsIndicator1";
-            this.motorsIndicator1.Size = new System.Drawing.Size(170, 200);
-            this.motorsIndicator1.TabIndex = 76;
-            this.motorsIndicator1.Text = "mwguiMotors1";
             // 
             // groupBox5
             // 
@@ -675,12 +629,6 @@
             this.splitContainer1.Panel1.Controls.Add(this.cb_monitor_rate);
             this.splitContainer1.Panel1.Controls.Add(this.label3);
             this.splitContainer1.Panel1.Controls.Add(this.b_pause);
-            this.splitContainer1.Panel1.Controls.Add(this.indACC);
-            this.splitContainer1.Panel1.Controls.Add(this.indMAG);
-            this.splitContainer1.Panel1.Controls.Add(this.indBARO);
-            this.splitContainer1.Panel1.Controls.Add(this.indGPS);
-            this.splitContainer1.Panel1.Controls.Add(this.indSONAR);
-            this.splitContainer1.Panel1.Controls.Add(this.indOPTIC);
             this.splitContainer1.Panel1.ForeColor = System.Drawing.Color.Black;
             // 
             // splitContainer1.Panel2
@@ -696,10 +644,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.l_vbatt);
             this.splitContainer1.Panel2.Controls.Add(this.label11);
             this.splitContainer1.Panel2.Controls.Add(this.label7);
-            this.splitContainer1.Panel2.Controls.Add(this.gpsIndicator);
             this.splitContainer1.Panel2.Controls.Add(this.l_powersum);
-            this.splitContainer1.Panel2.Controls.Add(this.attitudeIndicatorInstrumentControl1);
-            this.splitContainer1.Panel2.Controls.Add(this.headingIndicatorInstrumentControl1);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox3);
             this.splitContainer1.Panel2.Controls.Add(this.zgMonitor);
@@ -740,60 +685,6 @@
             this.b_pause.Text = "Pause";
             this.b_pause.UseVisualStyleBackColor = true;
             this.b_pause.Click += new System.EventHandler(this.b_pause_Click);
-            // 
-            // indACC
-            // 
-            this.indACC.Location = new System.Drawing.Point(19, 9);
-            this.indACC.Margin = new System.Windows.Forms.Padding(1);
-            this.indACC.Name = "indACC";
-            this.indACC.Size = new System.Drawing.Size(50, 17);
-            this.indACC.TabIndex = 82;
-            this.indACC.Text = "ACC";
-            // 
-            // indMAG
-            // 
-            this.indMAG.Location = new System.Drawing.Point(71, 9);
-            this.indMAG.Margin = new System.Windows.Forms.Padding(1);
-            this.indMAG.Name = "indMAG";
-            this.indMAG.Size = new System.Drawing.Size(50, 17);
-            this.indMAG.TabIndex = 84;
-            this.indMAG.Text = "MAG";
-            // 
-            // indBARO
-            // 
-            this.indBARO.Location = new System.Drawing.Point(123, 9);
-            this.indBARO.Margin = new System.Windows.Forms.Padding(1);
-            this.indBARO.Name = "indBARO";
-            this.indBARO.Size = new System.Drawing.Size(50, 17);
-            this.indBARO.TabIndex = 83;
-            this.indBARO.Text = "BARO";
-            // 
-            // indGPS
-            // 
-            this.indGPS.Location = new System.Drawing.Point(175, 9);
-            this.indGPS.Margin = new System.Windows.Forms.Padding(1);
-            this.indGPS.Name = "indGPS";
-            this.indGPS.Size = new System.Drawing.Size(50, 17);
-            this.indGPS.TabIndex = 86;
-            this.indGPS.Text = "GPS";
-            // 
-            // indSONAR
-            // 
-            this.indSONAR.Location = new System.Drawing.Point(227, 9);
-            this.indSONAR.Margin = new System.Windows.Forms.Padding(1);
-            this.indSONAR.Name = "indSONAR";
-            this.indSONAR.Size = new System.Drawing.Size(50, 17);
-            this.indSONAR.TabIndex = 85;
-            this.indSONAR.Text = "SONAR";
-            // 
-            // indOPTIC
-            // 
-            this.indOPTIC.Location = new System.Drawing.Point(279, 9);
-            this.indOPTIC.Margin = new System.Windows.Forms.Padding(1);
-            this.indOPTIC.Name = "indOPTIC";
-            this.indOPTIC.Size = new System.Drawing.Size(50, 17);
-            this.indOPTIC.TabIndex = 103;
-            this.indOPTIC.Text = "OPTIC";
             // 
             // groupBox8
             // 
@@ -1102,14 +993,6 @@
             this.label7.TabIndex = 95;
             this.label7.Text = "Power:";
             // 
-            // gpsIndicator
-            // 
-            this.gpsIndicator.Location = new System.Drawing.Point(3, 263);
-            this.gpsIndicator.Name = "gpsIndicator";
-            this.gpsIndicator.Size = new System.Drawing.Size(150, 150);
-            this.gpsIndicator.TabIndex = 74;
-            this.gpsIndicator.Text = "gpsIndicator";
-            // 
             // l_powersum
             // 
             this.l_powersum.AutoSize = true;
@@ -1120,23 +1003,6 @@
             this.l_powersum.Size = new System.Drawing.Size(35, 15);
             this.l_powersum.TabIndex = 96;
             this.l_powersum.Text = "0000";
-            // 
-            // attitudeIndicatorInstrumentControl1
-            // 
-            this.attitudeIndicatorInstrumentControl1.Location = new System.Drawing.Point(153, 263);
-            this.attitudeIndicatorInstrumentControl1.Name = "attitudeIndicatorInstrumentControl1";
-            this.attitudeIndicatorInstrumentControl1.Size = new System.Drawing.Size(150, 150);
-            this.attitudeIndicatorInstrumentControl1.TabIndex = 71;
-            this.attitudeIndicatorInstrumentControl1.Text = "attitudeIndicatorInstrumentControl1";
-            this.attitudeIndicatorInstrumentControl1.Click += new System.EventHandler(this.attitudeIndicatorInstrumentControl1_Click);
-            // 
-            // headingIndicatorInstrumentControl1
-            // 
-            this.headingIndicatorInstrumentControl1.Location = new System.Drawing.Point(303, 263);
-            this.headingIndicatorInstrumentControl1.Name = "headingIndicatorInstrumentControl1";
-            this.headingIndicatorInstrumentControl1.Size = new System.Drawing.Size(150, 150);
-            this.headingIndicatorInstrumentControl1.TabIndex = 72;
-            this.headingIndicatorInstrumentControl1.Text = "headingIndicatorInstrumentControl1";
             // 
             // groupBox1
             // 
@@ -1501,12 +1367,38 @@
             this.b_about.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.b_about.Click += new System.EventHandler(this.b_about_Click);
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.trackBar1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(587, 451);
+            this.tabPage1.TabIndex = 3;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(117, 256);
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(246, 45);
+            this.trackBar1.TabIndex = 0;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(38, 37);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 1;
+            // 
             // mainGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(595, 532);
+            this.ClientSize = new System.Drawing.Size(595, 531);
             this.Controls.Add(this.tabMain);
             this.Controls.Add(this.toolStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1536,7 +1428,6 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.tabPageRC.ResumeLayout(false);
-            this.groupBox6.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.tabPageRealtime.ResumeLayout(false);
@@ -1557,6 +1448,9 @@
             this.groupBox3.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1675,6 +1569,9 @@
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ToolStripButton MWC_Button;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
