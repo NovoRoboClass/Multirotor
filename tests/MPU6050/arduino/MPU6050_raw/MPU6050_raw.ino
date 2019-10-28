@@ -33,6 +33,10 @@ THE SOFTWARE.
 #include "I2Cdev.h"
 #include "MPU6050.h"
 
+#include "config.h"
+#include "Serial.h"
+#include "Protocol.h"
+
 // Arduino Wire library is required if I2Cdev I2CDEV_ARDUINO_WIRE implementation
 // is used in I2Cdev.h
 #if I2CDEV_IMPLEMENTATION == I2CDEV_ARDUINO_WIRE
@@ -43,7 +47,7 @@ THE SOFTWARE.
 // specific I2C addresses may be passed as a parameter here
 // AD0 low = 0x68 (default for InvenSense evaluation board)
 // AD0 high = 0x69
-MPU6050 accelgyro;
+CMPU6050 accelgyro;
 //MPU6050 accelgyro(0x69); // <-- use for AD0 high
 
 int16_t ax, ay, az;
@@ -77,6 +81,10 @@ void setup() {
         Fastwire::setup(400, true);
     #endif
 
+
+    SerialOpen(0, SERIAL0_COM_SPEED);
+    
+    /*
     // initialize serial communication
     // (38400 chosen because it works as well at 8MHz as it does at 16MHz, but
     // it's really up to you depending on your project)
@@ -89,7 +97,8 @@ void setup() {
     // verify connection
     Serial.println("Testing device connections...");
     Serial.println(accelgyro.testConnection() ? "MPU6050 connection successful" : "MPU6050 connection failed");
-
+    */
+    
     // use the code below to change accel/gyro offset values
     /*
     Serial.println("Updating internal sensor offsets...");
@@ -125,10 +134,12 @@ void loop() {
     //accelgyro.getAcceleration(&ax, &ay, &az);
     //accelgyro.getRotation(&gx, &gy, &gz);
     
+  serialCom();  
+    
     //Serial.print("NNNNN\n");
     delay(100);
 
-
+/*
     #ifdef OUTPUT_READABLE_ACCELGYRO
         // display tab-separated accel/gyro x/y/z values
         Serial.print("a/g:\t");
@@ -148,7 +159,7 @@ void loop() {
         Serial.write((uint8_t)(gy >> 8)); Serial.write((uint8_t)(gy & 0xFF));
         Serial.write((uint8_t)(gz >> 8)); Serial.write((uint8_t)(gz & 0xFF));
     #endif
-
+*/
     // blink LED to indicate activity
     blinkState = !blinkState;
     digitalWrite(LED_PIN, blinkState);

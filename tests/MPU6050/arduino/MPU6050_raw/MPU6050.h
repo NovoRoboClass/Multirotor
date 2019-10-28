@@ -430,9 +430,9 @@ THE SOFTWARE.
 
 // note: DMP code memory blocks defined at end of header file
 
-class MPU6050 {
+class CMPU6050 {
     public:
-        MPU6050(uint8_t address=MPU6050_DEFAULT_ADDRESS);
+        CMPU6050(uint8_t address=MPU6050_DEFAULT_ADDRESS);
 
         void initialize();
         bool testConnection();
