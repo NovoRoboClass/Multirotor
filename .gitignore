@@ -1,3 +1,30 @@
 
 tests/MPU6050/etc/Atlantis.zip
 tests/MPU6050/etc/Atlantis/.vs/atlantis/v15/.suo
+tests/MPU6050/etc/cool_code/SerialApp.dsw
+tests/MPU6050/etc/cool_code/SerialApp.h
+
+# folders
+tests/MPU6050/etc/
+tests/MPU6050/WinConsole/QConsole/Debug/
+tests/MPU6050/WinConsole/QConsole/QConsole/Debug/
+trunk/console/Windows/
+
+tests/MPU6050/WinConsole/QConsole/.vs/QConsole/v15/.suo
+tests/MPU6050/WinConsole/QConsole/.vs/QConsole/v15/Browse.VC.db
+tests/MPU6050/WinConsole/QConsole/Debug/QConsole.exe
+tests/MPU6050/WinConsole/QConsole/QConsole/Debug/cl.command.1.tlog
+tests/MPU6050/WinConsole/QConsole/Debug/QConsole.ilk
+tests/MPU6050/WinConsole/QConsole/Debug/QConsole.pdb
+tests/MPU6050/WinConsole/QConsole/ipch/qconsole-7ccd88a6/qconsole-1b2a7910.ipch
+tests/MPU6050/WinConsole/QConsole/QConsole.opensdf
+tests/MPU6050/WinConsole/QConsole/QConsole.sdf
+tests/MPU6050/WinConsole/QConsole/QConsole.suo
+tests/MPU6050/WinConsole/QConsole/QConsole/Debug/CL.read.1.tlog
+tests/MPU6050/WinConsole/QConsole/QConsole/QConsole.vcxproj.filters
+tests/MPU6050/WinConsole/QConsole/QConsole/QConsole.vcxproj.user
+trunk/console/Windows.7z
+trunk/console/Windows/.vs/MultiWiiSimpleGUI/v15/.suo
+trunk/console/Windows/.vs/MultiWiiSimpleGUI/v15/sqlite3/storage.ide
+trunk/console/Windows/.vs/MultiWiiSimpleGUI/v15/.suo
+trunk/console/Windows/MultiWiiWinGUI/MultiWiiSimpleGUI.csproj.user
